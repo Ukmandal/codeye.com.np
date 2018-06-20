@@ -1,0 +1,46 @@
+<button class="btn btn-outline" style="color: #fff;background-color: #1a1877;margin: auto;width: 120px;" [routerLink]="['/employees/add']">Add Customer</button>
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>
+        <b>FirstName</b>
+      </td>
+      <td>
+        <b>LastName</b>
+      </td>
+      <td>
+        <b>Email</b>
+      </td>
+      <td>
+        <b>Password</b>
+      </td>
+      <td>
+        <b>Role</b>
+      </td>
+      <td>
+        <b>Country</b>
+      </td>
+      <td style="text-align: center;">
+        <b>Action</b>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees">
+      <td>{{employee.firstName}}</td>
+      <td>{{employee.lastName}}</td>
+      <td>{{employee.email}}</td>
+      <td>{{employee.password}}</td>
+      <td>{{employee.role}}</td>
+      <td>{{employee.country}}</td>
+      <td>
+        <a class="btn btn-outline" style="color: #fff;background-color: #1a1877;" routerLink="/employees/show/{{employee._id}}">Detail</a>
+        <a class="btn btn-outline" style="color: #fff;background-color: #1a1877;" routerLink="/employees/edit/{{employee._id}}">Edit</a>
+        <a class="btn btn-outline" style="color: #fff;background-color: #1a1877;" (click)="deleteEmployee(employee._id)">Delete</a>
+      </td>
+    </tr>
+
+  </tbody>
+
+</table>
