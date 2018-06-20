@@ -1,0 +1,79 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="text-center">Employee Registeration Form :
+      <br> You can add an employee details information into this employment management system.
+    </h4>
+  </div>
+  <div class="panel-body">
+    <!-- <div class="row"> -->
+    <form class="form-horizontal" (submit)="addEmployee()">
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <label for="emp_firstName" class="col-sm-2 control-label">First Name : </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="model.firstName" name="firstName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <label for="emp_lastName" class="col-sm-2 control-label">Last Name : </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="model.lastName" name="LastName">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <label for="email" class="col-sm-2 control-label">Email : </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="model.email" name="email">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <label for="password" class="col-sm-2 control-label">Password : </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="model.password" name="password">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <label for="role" class="col-sm-2 control-label">Role : </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="model.role" name="role">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <label for="color" class="col-sm-2 control-label">Color : </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="model.color" name="color">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <label for="status" class="col-sm-2 control-label">Status : </label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" [(ngModel)]="model.status" name="status">
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-2"></div>
+        <label for="country" class="col-sm-2 control-label">Country : </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" [(ngModel)]="model.country" name="country">
+        </div>
+      </div>
+
+
+      <div class="form-group">
+        <div style="text-align: right;margin-right: 190px;">
+          <button type="submit" class="btn btn-outline" style="color: #fff;background-color: #1a1877;margin: 5px;">Save</button>
+          <a class="btn btn-outline" style="color: #fff;background-color: #1a1877;" (click)="goBack()">Cancel</a>
+        </div>
+
+      </div>
+    </form>
+    <!-- </div> -->
+
+  </div>
+</div>
