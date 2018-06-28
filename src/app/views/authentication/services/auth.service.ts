@@ -4,15 +4,20 @@ import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map';
 import { IEmployee } from "../../shared/interface";
 import { ADMIN_DB } from "../../shared/mock-list";
-
+import { Subject } from "rxjs";
 
 @Injectable()
 export class AuthService {
-    private redirectUrl: string = '/dashboard';
+    private redirectUrl: string = '/customer';
     private loginUrl: string = '/login';
     private isLoggedIn: boolean = false;
     private loggedInUser: IEmployee;
-    onLoginSuccess: any;
+    onLoginSuccess = new Subject();
+
+    get getCurrentUser() {
+        return this.loggedInUser;
+    }
+    
     getAllUsers(): Observable<IEmployee[]> {
         return  Observable.of(ADMIN_DB);
     }
