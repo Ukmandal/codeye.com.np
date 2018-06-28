@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
   fullImagePath4: string;
 
   constructor() {
-    this.fullImagePath1 = './assets/img/faces/ayo-ogunseinde-2.jpg';
+    this.fullImagePath1 = './assets/img/faces/erik-lucatero-2.jpg';
     this.fullImagePath2 = './assets/img/faces/clem-onojeghuo-2.jpg';
     this.fullImagePath3 = './assets/img/faces/clem-onojeghuo-3.jpg';
     this.fullImagePath4 = './assets/img/faces/kaci-baum-2.jpg';
