@@ -3,33 +3,21 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
 
-import { RegisterComponent } from './views/register/register.component';
-import { SettingComponent } from './views/settings/setting.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { LoginComponent } from './views/authentication/login/login.component';
-import { LogoutComponent } from './views/authentication/logout/logout.component';
-import { ContactComponent } from './views/contact/contact.component';
+// import { LogoutComponent } from './views/authentication/logout/logout.component';
 import { NotFoundComponent } from './views/not-found/not-found-.component';
+import { RegisterComponent } from './views/authentication/register/register.component';
+import { CustomerListComponent } from './views/customer/customer-list.component';
+import { CustomerDetailComponent } from './views/customer/details/customer-detail.component';
+import { SettingComponent } from './views/customer/details/settings/setting.component';
+import { ContactComponent } from './views/customer/details/contact/contact.component';
 
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'dashboard',
     pathMatch: 'full',
-  },
-  {
-    path: 'login',
-    component: LoginComponent,
-    data: {
-      title: 'Login Page'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-    data: {
-      title: 'Register Page'
-    }
   },
   {
     path: '',
@@ -51,10 +39,55 @@ export const routes: Routes = [
         loadChildren: './views/theme/theme.module#ThemeModule'
       },
       {
-        path: 'setting',
-        component: SettingComponent,
+        path: 'customer',
+        component: CustomerListComponent,
         data: {
-          title: 'Setting Page'
+          title: 'Customer Page'
+        }
+      },
+      {
+        path: 'details/:id',
+        component: CustomerDetailComponent,
+        data: {
+          title: 'Details Page'
+        },
+        children: [
+          {
+            path: 'setting',
+            component: SettingComponent,
+            data: {
+              title: 'Setting Page'
+            }
+          },
+          {
+            path: 'contact',
+            component: ContactComponent,
+            data: {
+              title: 'Contact Page'
+            }
+          },
+        ]
+      },
+      // {
+      //   path: 'customer',
+      //   loadChildren: './views/customer/customer.module#CustomerModule'
+      // },
+      // {
+      //   path: 'login',
+      //   loadChildren: './views/authentication/auth.module#AuthModule'
+      // },
+      {
+        path: 'login',
+        component: LoginComponent,
+        data: {
+          title: 'Login Page'
+        }
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
+        data: {
+          title: 'Register Page'
         }
       },
       {
@@ -64,20 +97,13 @@ export const routes: Routes = [
           title: 'Profile Page'
         }
       },
-      {
-        path: 'logout',
-        component: LogoutComponent,
-      },
-      {
-        path: 'contact',
-        component: ContactComponent,
-        data: {
-          title: 'Contact Page'
-        }
-      },
+      // {
+      //   path: 'logout',
+      //   component: LogoutComponent,
+      // },
+      { path: '**', component: NotFoundComponent },
     ]
   },
-  { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

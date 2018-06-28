@@ -14,8 +14,6 @@ import { AppComponent } from './app.component';
 // Import containers
 import { DefaultLayoutComponent } from './containers';
 
-import { RegisterComponent } from './views/register/register.component';
-
 const APP_CONTAINERS = [
   DefaultLayoutComponent
 ];
@@ -37,21 +35,28 @@ import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeService } from './views/shared/employee.service';
-// import { AuthService } from './views/shared/auth.service';
 import { NotFoundComponent } from './views/not-found/not-found-.component';
-import { SettingComponent } from './views/settings/setting.component';
 import { ProfileComponent } from './views/profile/profile.component';
 import { AuthService } from './views/authentication/services/auth.service';
 import { AuthGuardService } from './views/authentication/services/auth-guard.service';
 import { LoginComponent } from './views/authentication/login/login.component';
-import { LogoutComponent } from './views/authentication/logout/logout.component';
-import { ContactComponent } from './views/contact/contact.component';
+import { HttpModule } from '@angular/http';
+import { RegisterComponent } from './views/authentication/register/register.component';
+import { MatSnackBarModule } from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { CustomerListComponent } from './views/customer/customer-list.component';
+import { CustomerDetailComponent } from './views/customer/details/customer-detail.component';
+import { SettingComponent } from './views/customer/details/settings/setting.component';
+import { ContactComponent } from './views/customer/details/contact/contact.component';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     FormsModule,
+    HttpModule,
+    // NgbModule.forRoot(),
     ReactiveFormsModule,
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
@@ -62,6 +67,7 @@ import { ContactComponent } from './views/contact/contact.component';
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
+    MatSnackBarModule,
   ],
   declarations: [
     AppComponent,
@@ -72,7 +78,8 @@ import { ContactComponent } from './views/contact/contact.component';
     SettingComponent,
     ProfileComponent,
     ContactComponent,
-    LogoutComponent,
+    CustomerListComponent,
+    CustomerDetailComponent,  
   ],
   providers: [EmployeeService, AuthService, AuthGuardService,
     // {

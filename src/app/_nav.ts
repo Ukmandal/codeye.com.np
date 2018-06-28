@@ -8,28 +8,45 @@ export const navItems = [
       text: 'NEW'
     }
   },
-  {
-    title: true,
-    name: 'Employees',
-  },
+  // {
+  //   name: 'Customers',
+  //   url: '/customer',
+  //   icon: 'icon-star',
+  //   children: [
+  //     {
+  //       name: 'Customers List',
+  //       url: '/customer',
+  //       icon: 'icon-drop'
+  //     },
+  //   ]
+  // },
   {
     name: 'Employees',
     url: '/employees',
-    icon: 'icon-star'
-  },
-
-  {
-    title: true,
-    name: 'Theme'
-  },
-  {
-    name: 'Colors',
-    url: '/theme/colors',
-    icon: 'icon-drop'
+    icon: 'icon-star',
+    children: [
+      {
+        name: 'Employees List',
+        url: '/employees',
+        icon: 'icon-drop'
+      },
+    ]
   },
   {
-    name: 'Typography',
-    url: '/theme/typography',
-    icon: 'icon-pencil'
-  },
+    name: 'Theme',
+    url: '/theme',
+    icon: 'icon-star',
+    children: [
+      {
+        name: 'Colors',
+        url: '/theme/colors',
+        icon: 'icon-drop'
+      },
+      {
+        name: 'Typography',
+        url: '/theme/typography',
+        icon: 'icon-pencil'
+      },
+    ]
+  }
 ];
