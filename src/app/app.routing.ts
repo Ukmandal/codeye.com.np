@@ -10,8 +10,8 @@ import { NotFoundComponent } from './views/not-found/not-found-.component';
 import { RegisterComponent } from './views/authentication/register/register.component';
 import { CustomerListComponent } from './views/customer/customer-list.component';
 import { CustomerDetailComponent } from './views/customer/details/customer-detail.component';
-import { SettingComponent } from './views/customer/details/settings/setting.component';
-import { ContactComponent } from './views/customer/details/contact/contact.component';
+import { SettingComponent } from './views/settings/setting.component';
+import { ContactComponent } from './views/contact/contact.component';
 
 export const routes: Routes = [
   {
@@ -68,19 +68,18 @@ export const routes: Routes = [
           },
         ]
       },
-      // {
-      //   path: 'customer',
-      //   loadChildren: './views/customer/customer.module#CustomerModule'
-      // },
-      // {
-      //   path: 'login',
-      //   loadChildren: './views/authentication/auth.module#AuthModule'
-      // },
       {
         path: 'login',
         component: LoginComponent,
         data: {
           title: 'Login Page'
+        }
+      },
+      {
+        path: 'contact',
+        component: ContactComponent,
+        data: {
+          title: 'Contact Page'
         }
       },
       {

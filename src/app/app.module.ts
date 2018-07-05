@@ -42,12 +42,12 @@ import { AuthGuardService } from './views/authentication/services/auth-guard.ser
 import { LoginComponent } from './views/authentication/login/login.component';
 import { HttpModule } from '@angular/http';
 import { RegisterComponent } from './views/authentication/register/register.component';
-import { MatSnackBarModule } from '@angular/material';
+import { MatSnackBarModule, MatTableModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { CustomerListComponent } from './views/customer/customer-list.component';
 import { CustomerDetailComponent } from './views/customer/details/customer-detail.component';
-import { SettingComponent } from './views/customer/details/settings/setting.component';
-import { ContactComponent } from './views/customer/details/contact/contact.component';
+import { SettingComponent } from './views/settings/setting.component';
+import { ContactComponent } from './views/contact/contact.component';
 
 @NgModule({
   imports: [
@@ -68,6 +68,7 @@ import { ContactComponent } from './views/customer/details/contact/contact.compo
     TabsModule.forRoot(),
     ChartsModule,
     MatSnackBarModule,
+    MatTableModule,
   ],
   declarations: [
     AppComponent,
@@ -81,7 +82,7 @@ import { ContactComponent } from './views/customer/details/contact/contact.compo
     CustomerListComponent,
     CustomerDetailComponent,  
   ],
-  providers: [EmployeeService, AuthService, AuthGuardService,
+  providers: [EmployeeService, AuthService, AuthGuardService
     // {
     //   provide: LocationStrategy,
     //   useClass: HashLocationStrategy
