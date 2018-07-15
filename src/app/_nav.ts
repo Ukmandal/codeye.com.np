@@ -8,34 +8,10 @@ export const navItems = [
       text: 'NEW'
     }
   },
-  // {
-  //   name: 'Customers',
-  //   url: '/customer',
-  //   icon: 'icon-star',
-  //   children: [
-  //     {
-  //       name: 'Customers List',
-  //       url: '/customer',
-  //       icon: 'icon-drop'
-  //     },
-  //   ]
-  // },
-  {
-    name: 'Employees',
-    url: '/employees',
-    icon: 'icon-star',
-    children: [
-      {
-        name: 'Employees List',
-        url: '/employees',
-        icon: 'icon-drop'
-      },
-    ]
-  },
   {
     name: 'Theme',
     url: '/theme',
-    icon: 'icon-star',
+    icon: 'icon-plus',
     children: [
       {
         name: 'Colors',

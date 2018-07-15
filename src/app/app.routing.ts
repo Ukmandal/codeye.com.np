@@ -3,15 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { DefaultLayoutComponent } from './containers';
 
-import { ProfileComponent } from './views/profile/profile.component';
 import { LoginComponent } from './views/authentication/login/login.component';
-// import { LogoutComponent } from './views/authentication/logout/logout.component';
 import { NotFoundComponent } from './views/not-found/not-found-.component';
 import { RegisterComponent } from './views/authentication/register/register.component';
 import { CustomerListComponent } from './views/customer/customer-list.component';
 import { CustomerDetailComponent } from './views/customer/details/customer-detail.component';
-import { SettingComponent } from './views/settings/setting.component';
-import { ContactComponent } from './views/contact/contact.component';
+import { ContactComponent } from './views/customer/details/contact/contact.component';
+import { SettingComponent } from './views/customer/details/settings/setting.component';
 
 export const routes: Routes = [
   {
@@ -29,10 +27,6 @@ export const routes: Routes = [
       {
         path: 'dashboard',
         loadChildren: './views/dashboard/dashboard.module#DashboardModule'
-      },
-      {
-        path: 'employees',
-        loadChildren: './views/employees/employees.module#EmployeesModule'
       },
       {
         path: 'theme',
@@ -76,30 +70,12 @@ export const routes: Routes = [
         }
       },
       {
-        path: 'contact',
-        component: ContactComponent,
-        data: {
-          title: 'Contact Page'
-        }
-      },
-      {
         path: 'register',
         component: RegisterComponent,
         data: {
           title: 'Register Page'
         }
       },
-      {
-        path: 'profile',
-        component: ProfileComponent,
-        data: {
-          title: 'Profile Page'
-        }
-      },
-      // {
-      //   path: 'logout',
-      //   component: LogoutComponent,
-      // },
       { path: '**', component: NotFoundComponent },
     ]
   },
